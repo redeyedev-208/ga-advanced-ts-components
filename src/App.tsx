@@ -1,5 +1,6 @@
 import Input from './components/Input.tsx';
 import Button from './components/Button.tsx';
+import Container from './components/Container.tsx';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           My Favorite Coffee Roaster
         </Button>
       </p>
+      <Container as={Button} />
     </main>
   );
 }
