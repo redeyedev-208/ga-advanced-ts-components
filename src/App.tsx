@@ -15,11 +15,10 @@ function App() {
         type='number'
       />
       <p>
-        <Button el='button'>A Button</Button>
+        <Button>A Button</Button>
       </p>
       <p>
         <Button
-          el='link'
           href='https://www.lacolombe.com/'
           target='_blank'
         >
