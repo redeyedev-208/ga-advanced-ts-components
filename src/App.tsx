@@ -1,4 +1,5 @@
 import Input from './components/Input.tsx';
+import Button from './components/Button.tsx';
 
 function App() {
   return (
@@ -13,6 +14,19 @@ function App() {
         label='Your age'
         type='number'
       />
+      <p>
+        <Button el='button'>A Button</Button>
+      </p>
+      <p>
+        <Button
+          el='link'
+          href='https://www.lacolombe.com/'
+          target='_blank'
+        >
+          {' '}
+          My Favorite Coffee Roaster
+        </Button>
+      </p>
     </main>
   );
 }
