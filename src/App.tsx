@@ -27,7 +27,13 @@ function App() {
           My Favorite Coffee Roaster
         </Button>
       </p>
-      <Container as={Button} />
+      <Container
+        as={Button}
+        onClick={() => {}}
+        type='button'
+      >
+        Polymophic Click Me Button
+      </Container>
     </main>
   );
 }
