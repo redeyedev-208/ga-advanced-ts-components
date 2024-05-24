@@ -1,20 +1,27 @@
 import Input from './components/Input.tsx';
 import Button from './components/Button.tsx';
 import Container from './components/Container.tsx';
-import Form from './components/Form.tsx';
+import Form, { type FormHandle } from './components/Form.tsx';
+import { useRef } from 'react';
 
 function App() {
+  // we now need to create a ref to handle our custom component
+  const customForm = useRef<FormHandle>(null);
   function handleSave(data: unknown) {
-    // now we address not knowing what the data will be in the form
-    // we do know the shape of the data in this component
-    // we need to extract and convince Typescript of the type
-    // so we can then use the as to do so
     const extractedData = data as { name: string; age: string };
     console.log(extractedData);
+    // this is not clear that this will be connected to an object
+    // it is initially null and we need to give Typescript more info
+    // so when we enter information, then click the save button
+    // once it is saved the form will clear due to the type of FormHandle which is imported
+    customForm.current?.clear();
   }
   return (
     <main>
-      <Form onSave={handleSave}>
+      <Form
+        onSave={handleSave}
+        ref={customForm}
+      >
         <Input
           id='name'
           label='Your name'
